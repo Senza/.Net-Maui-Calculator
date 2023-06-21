@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculator.Resources.Styles.CustomStyles">
+
+
+    <Color x:Key="Primary">#313131</Color>
+    <Color x:Key="Secondary">#C9DD92</Color>
+    <Color x:Key="Tertiary">#185A9D</Color>
+    <Color x:Key="PurpleAccent">#FF4778</Color>
+    <Color x:Key="White">#F3EFFE</Color>
+    <Color x:Key="Gray">#707070</Color>
+
+    <Color x:Key="LightBackground">#F3EFFE</Color>
+    <Color x:Key="DarkBackground">#313131</Color>
+
+    <Color x:Key="LabelText">#1A1A1A</Color>
+    <Color x:Key="LabelTextDark">#F3EFFE</Color>
+
+    <Style TargetType="Page" ApplyToDerivedTypes="True">
+        <Setter Property="BackgroundColor"
+                Value="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}"/>
+    </Style>
+    <Style ApplyToDerivedTypes="True" TargetType="NavigationPage">
+        <Setter Property="Background" Value="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}"/>
+        <Setter Property="BarBackgroundColor" Value="{StaticResource Primary}"/>
+        <Setter Property="BarTextColor" Value="#F3EFFE"/>
+    </Style>
+    <Style TargetType="Label" x:Key="BaseLabel">
+        <Setter Property="FontFamily" Value="OpenSansRegular" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource LabelText}, Dark={StaticResource LabelTextDark}}" />
+    </Style>
+
+    <Style x:Key="LargeLabel" BasedOn="{StaticResource BaseLabel}" TargetType="Label">
+        <Setter Property="FontSize" Value="60"/>
+        <Setter Property="FontFamily" Value="OpenSansSemibold"/>
+    </Style>
+
+    <Style x:Key="SmallLabel" BasedOn="{StaticResource BaseLabel}" TargetType="Label">
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="FontFamily" Value="OpenSansSemibold"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="BaseButton">
+        <Setter Property="FontFamily" Value="OpenSansSemibold"/>
+        <Setter Property="FontSize" Value="50"/>
+        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray}}" />
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+    </Style>
+
+    <Style TargetType="Button" x:Key="MathButton" BasedOn="{StaticResource BaseButton}">
+        <Setter Property="BackgroundColor" Value="DarkCyan"/>
+    </Style>    
+    
+    <Style TargetType="Button" x:Key="ClearButton" BasedOn="{StaticResource BaseButton}">
+        <Setter Property="BackgroundColor" Value="OrangeRed"/>
+    </Style>
+
+</ResourceDictionary>

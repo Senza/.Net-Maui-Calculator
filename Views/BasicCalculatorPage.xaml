@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculator.Views.BasicCalculatorPage"
+             
+             Title="{Binding Title}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="600"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="150"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Text="{Binding SolutionDetails}"  TextColor="Yellow" HorizontalTextAlignment="End" Style="{StaticResource SmallLabel}"/>
+            <Label Grid.Row="1" Text="{Binding  CalculationString}"  HorizontalTextAlignment="End" Style="{StaticResource LargeLabel}"/>
+           
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Style="{StaticResource ClearButton}" Grid.Column="0" Text="C" Command="{Binding ClearInputCommand}"/>
+                <Button Style="{StaticResource BaseButton}" Grid.Column="1" Text="+/-" Command="{Binding SignInputCommand}"/>
+                <Button Style="{StaticResource BaseButton}" Grid.Column="2" Text="%" Command="{Binding PercentageCommand}"/>
+                <Button Style="{StaticResource MathButton}" Grid.Column="3" Text="÷" Command="{Binding DivideCommand}" CommandParameter=" ÷ "/>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Style="{StaticResource BaseButton}" Grid.Column="0" Text="7" Command="{Binding InputButtonCommand}" CommandParameter="7"/>
+                <Button Style="{StaticResource BaseButton}" Grid.Column="1" Text="8" Command="{Binding InputButtonCommand}" CommandParameter="8"/>
+                <Button Style="{StaticResource BaseButton}" Grid.Column="2" Text="9" Command="{Binding InputButtonCommand}" CommandParameter="9"/>
+                <Button Style="{StaticResource MathButton}" Grid.Column="3" Text="x" Command="{Binding MultiplyCommand}" CommandParameter=" x "/>
+            </Grid>
+
+
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Style="{StaticResource BaseButton}" Grid.Column="0"  Text="4" Command="{Binding InputButtonCommand}" CommandParameter="4"/>
+                <Button Style="{StaticResource BaseButton}" Grid.Column="1"  Text="5" Command="{Binding InputButtonCommand}" CommandParameter="5"/>
+                <Button Style="{StaticResource BaseButton}" Grid.Column="2"  Text="6" Command="{Binding InputButtonCommand}" CommandParameter="6"/>
+                <Button Style="{StaticResource MathButton}" Grid.Column="3"  Text="-" Command="{Binding SubstractCommand}" CommandParameter=" - "/>
+            </Grid>
+
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Style="{StaticResource BaseButton}" Grid.Column="0" Text="1" Command="{Binding InputButtonCommand}" CommandParameter="1"/>
+                <Button Style="{StaticResource BaseButton}" Grid.Column="1" Text="2" Command="{Binding InputButtonCommand}" CommandParameter="2"/>
+                <Button Style="{StaticResource BaseButton}" Grid.Column="2" Text="3" Command="{Binding InputButtonCommand}" CommandParameter="3"/>
+                <Button Style="{StaticResource MathButton}" Grid.Column="3" Text="+" Command="{Binding AddCommand}" CommandParameter=" + "/>
+            </Grid>
+
+            <Grid Grid.Row="4">
+               
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <Button  Style="{StaticResource BaseButton}" Grid.Column="0" Text="0" Command="{Binding InputButtonCommand}" CommandParameter="0"/>
+                <Button  Style="{StaticResource BaseButton}" Grid.Column="1" Grid.ColumnSpan="2" Text="." Command="{Binding InputButtonCommand}" CommandParameter="."/>
+                <Button  Style="{StaticResource MathButton}" Grid.Column="3" Text="=" Command="{Binding EqualsCommand}" CommandParameter=""/>
+            </Grid>
+
+
+            <!--<Button WidthRequest="50" HeightRequest="50" Text="0" Command="{Binding InputButtonCommand}" CommandParameter="0"/>
+            <Button WidthRequest="50" HeightRequest="50" Text="1" Command="{Binding InputButtonCommand}" CommandParameter="1"/>
+            <Button WidthRequest="50" HeightRequest="50" Text="2" Command="{Binding InputButtonCommand}" CommandParameter="2"/>
+            <Button WidthRequest="50" HeightRequest="50" Text="3" Command="{Binding InputButtonCommand}" CommandParameter="3"/>
+            <Button WidthRequest="50" HeightRequest="50" Text="4" Command="{Binding InputButtonCommand}" CommandParameter="4"/>
+            <Button WidthRequest="50" HeightRequest="50" Text="5" Command="{Binding InputButtonCommand}" CommandParameter="5"/>
+            <Button WidthRequest="50" HeightRequest="50" Text="6" Command="{Binding InputButtonCommand}" CommandParameter="6"/>
+           
+
+            <Button WidthRequest="50" HeightRequest="50" Text="+" Command="{Binding AddCommand}" CommandParameter=" + "/>
+            <Button WidthRequest="50" HeightRequest="50" Text="-" Command="{Binding SubstractCommand}" CommandParameter=" - "/>
+           
+            
+            <Button WidthRequest="50" HeightRequest="50" Text="=" Command="{Binding EqualsCommand}" CommandParameter=""/>-->
+        </Grid>
+    </Grid>
+
+
+</ContentPage>
